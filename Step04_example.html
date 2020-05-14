@@ -25,7 +25,16 @@
 
         //저장된 내용 보기 누르면 호출되는 함수
         function show(){
-            document.querySelector("#console").innerText = msgs
+            //배열에서 참조된 할 일을 저장할 변수
+            var todo = "";
+            for(var i=0; i<msgs.length; i++){
+                //i 번째 방에 저장된 할 일을 읽어온다.
+                var line=msgs[i];
+                // 테스트로 콘솔창에 출력해보기.
+                console.log(line);
+                todo = todo + line;
+            }
+            document.querySelector("#console").innerText=todo;
         };
 
 
