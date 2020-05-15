@@ -29,11 +29,11 @@
             console.log("마우스를 올렸나요?");
         };
 
-        document.querySelector("#one")
-        .addEventListener("click", function(){
+        // id 가 one 인 요소에 click 이벤트가 일어났을 때 호출되는 함수 등록
+        document.querySelector("#one").addEventListener("click", function(){
             console.log("또 클릭했군요?")
         });
-
+        // id 가 one 인 요소에 mouseover 이벤트가 일어났을 때 호출되는 함수 등록
         document.querySelector("#one").addEventListener("mouseover", function(){
             console.log("마우스를 올렸다는거 다 압니다.")
         });
