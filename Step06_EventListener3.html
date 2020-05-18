@@ -9,7 +9,8 @@
             width: 100px;
             height: 100px;
             background-color: aquamarine;
-            border: 2px solid bisque;  
+            border: 2px solid bisque; 
+            margin-bottom: 2px;
         }
     </style>
 </head>
@@ -23,9 +24,10 @@
 
     <script>
         //클래스명이 box인 div의 참조값을 배열에 담아오기
-        var divs = document.querySelectorAll(".box");
+        var divs = document.querySelectorAll(".box"); 
         /*
             div 배열 안에 있는 div의 참조값을 이용해서 이벤트 등록을 해서 동작하게 하기
+            document 도 오브젝트에 포함된다. 웹브라우저가 만들어 놓은 것.
         */
         for(var i=0; i<divs.length; i++){
             divs[i].addEventListener("click", function(){
