@@ -21,10 +21,26 @@
         })
 
         //input 요소에 keydown 이벤트가 일어났을 때 호출되는 함수 등록
-        document.querySelector("#inputMsg").addEventListener("keydown",function(){
-            console.log("keydown~");
+        document.querySelector("#inputMsg").addEventListener("keyup",function(a){    //event 객체 만들기: 해당 함수에서 일어나고 있는 모든 event에 대한 정보를 담고있는 오브젝트를 함수에 전달
+            console.log(a);
+            if(a.key == "Enter"){ //조건부 수행 블럭 - enter키를 눌렀을 때!
+                //1. input 요소에 입력한 value 값 읽어오기.
+                var msg = document.querySelector("#inputMsg").value;
+                //2. p요소의 innerText에 반영하기.
+                document.querySelector("#console").innerText = msg;
+                //3. 입력창 초기화 - 빈문자 넣어주기
+                document.querySelector("#inputMsg").value = ""
+            }
         })
     </script>
 </body>
-</html>\
-<!--enter를 눌렀을 때 이벤트를 처리하게 만드는 법 : -->
+</html>
+<!--new
+    keydown : enter를 눌렀을 때! 이벤트를 처리하게 만드는 법 
+    포커스는 모든 요소가 받는 것이 아니다. anchor라거나 input 요소 등등 한정적임.
+    keyup : 눌렀다 땠을 때 반영
+    어떤 코드블럭을 무조건 수행하는 것이 아니구, 조건부 수행하고 싶을 때? >>>>if문 사용<<<<
+    if(조건){코드} : 조건이 true일 경우, 코드를 수행.
+    거의 모든 동작은 if문에 의해 짜인다. 조건에 맞아야 수행되도록 함.
+
+-->
