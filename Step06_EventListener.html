@@ -7,13 +7,20 @@
     <style>
         .box{
             width: 100px;
+<<<<<<< HEAD
             height: 100px;
             background-color: yellow;
             border: 1px solid red;
+=======
+            height:100px;
+            background-color: ghostwhite;
+            border: 1px solid pink;
+>>>>>>> LeeB
         }
     </style>
 </head>
 <body>
+<<<<<<< HEAD
     <h1>EventListener 함수 테스트중...</h1>
     <div class="box" 
         onclick="clicked()" 
@@ -36,6 +43,33 @@
         .addEventListener("mouseover", function(){
             console.log("마우스를 올렸네???");
         });
+=======
+    <h1>EventListener 함수 테스트 중...</h1>
+    <div class="box" 
+        onclick="clicked();" 
+        onmouseover="mouseovered()">div1</div>
+    <p></p>
+    <div class="box" id="one">div2</div>
+
+    <script>
+        function clicked(){
+            console.log("클릭했나요?");
+        };
+        function mouseovered(){
+            console.log("마우스를 올렸나요?");
+        };
+
+        // id 가 one 인 요소에 click 이벤트가 일어났을 때 호출되는 함수 등록
+        document.querySelector("#one").addEventListener("click", function(){
+            console.log("또 클릭했군요?")
+        });
+        // id 가 one 인 요소에 mouseover 이벤트가 일어났을 때 호출되는 함수 등록
+        document.querySelector("#one").addEventListener("mouseover", function(){
+            console.log("마우스를 올렸다는거 다 압니다.")
+        });
+
+        //addEventListener : click이라는 이벤트가 일어나면 이 함수를 호출해주세요.
+>>>>>>> LeeB
     </script>
 </body>
 </html>

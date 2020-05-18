@@ -6,6 +6,7 @@
     <title>Step05_function2.html</title>
 </head>
 <body>
+<<<<<<< HEAD
     <h1>function type 테스트중...</h1>
     <script>
         keepBeer(); // 미리 만들어진 함수를 호출하기 때문에 오류가 나지 않는다.
@@ -23,6 +24,29 @@
             console.log("맥주를 넣는다");
             console.log("냉장고 문을 닫는다.");
         };
+=======
+    <h1>function type 테스트 중...</h1>
+    <script>
+
+        keepBeer(); /*함수의 참조값이 들어있는 keepBeer 변수를 호출한다는 뜻. 
+        젤 먼저 썼을 때, function keepbeer() 일 땐 호출이 되고, var keepBeer 는 호출되지 않는다. */
+
+        function keepBeer(){   //이름 있는 함수를 만들기. keepBeer이라는 변수가 만들어지고 함수의 참조값이 들어가있다.  
+            console.log("냉장고 문을 연다.");
+            console.log("맥주를 넣는다.");
+            console.log("냉장고 문을 닫는다.");
+        }
+
+        var keepBeer2 = function(){   //이름이 없는 함수를 만들어서 변수에 넣기.
+            console.log("냉장고 문을 연다.");
+            console.log("맥주를 넣는다.");
+            console.log("냉장고 문을 닫는다.");
+        }
+
+
+        /* 둘의 차이점 : 전자는 페이지가 만들어질 때 우선적으로 만들어지고, 후자는 순서대로 만들어진다. 
+           후자로 쓰는 것을 추천하는 이유는 순서가 엉키지 말라구. */
+>>>>>>> LeeB
     </script>
 </body>
 </html>

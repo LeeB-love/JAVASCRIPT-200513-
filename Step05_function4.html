@@ -8,6 +8,7 @@
 <body>
     <h1>function type 테스트중...</h1>
     <script>
+<<<<<<< HEAD
         // plain object type 을 리턴해주는 함수 
         var getInfo=function(){
             var mem={num:1, name:"김구라", isMan:true};
@@ -34,6 +35,33 @@
         var c=getCar().name;
         var d=getCar().drive;
         var e=getCar().drive();
+=======
+        var getInfo=function(){
+            var mem = {num:1, name:"김구라", isMan:true};
+            return mem;
+        };
+
+        var getList = function(){
+            var friends = ["김구라", "해골", "원숭이"];
+            return friends;
+        }
+
+        var getCar = function(){
+            var car = {
+                name : "소나타",
+                drive : function(){
+                    console.log("달려요!");
+                }
+            };
+            return  car;
+        }
+
+        var a = getCar;    //function type
+        var b = getCar();  // object type
+        var c = getCar().name;   //string type
+        var d = getCar().driver;  //function type
+        var e = getCar().drive();  //undefined type
+>>>>>>> LeeB
     </script>
 </body>
 </html>
