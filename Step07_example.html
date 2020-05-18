@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_example.html</title>
+</head>
+<body>
+    <h1>논리 연산자 테스트 예제</h1>
+    <input type="number" id="height" placeholder="키를 입력하세요...">
+    <input type="number" id="weight" placeholder="몸무게를 입력하세요...">
+    <button id="checkBtn">놀이기구를 탈 수 있는지 확인하기</button>
+    <p id="console"></p>
+
+    <script>
+        /*
+            키가 너무 작거나 몸무게가 너무 크면 탈 수 없는 놀이기구가 있다.
+            키는 150 이상, 몸무게는 100 미만이 기준이다.
+            키와 몸무게를 입력하고 확인하기 버튼을 누르면
+            해당 놀이기구를 탈 수 있는지 없는지 메세지를
+            p 요소의 innerText에 출력하는 프로그래밍을 해보세요.
+        */
+        
+        document.querySelector("#checkBtn").addEventListener("click", function(){
+            var H = document.querySelector("#height").value;
+            var W = document.querySelector("#weight").value;
+
+            if(parseFloat(H)<150 ||parseFloat(W)>=100){
+                document.querySelector("#console").innerText = "탑승 불가합니다.ㅜㅜ";
+            }else{
+                document.querySelector("#console").innerText = "탑승 가능합니다.^0^";
+            };
+        });
+        
+
+    </script>
+</body>
+</html>
