@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step09_example2.html</title>
+    <style>
+        h1{
+            margin-left: 340px;
+        }
+        #menu{
+            height: 500px;
+            width: 100px;
+            border: 1px solid red;
+        }
+        canvas{
+            border: burlywood 1px solid;
+            margin-left: 10px;
+        }
+        div{
+            margin-left: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>그림판 만들기</h1>
+    <span><div id="menu"></div></span>
+    <span><canvas id="myCanvas" width="500" height="500"></canvas></span>  <!--원하는 그림을 그릴 수 있는 곳-->
+    <span>
+        <div>
+            색상<input type="color" id="selectedColor"/>
+            굵기<input type="range" id="selectedWidth"
+                    min="1" max="20" step="1" value="5" />
+            <strong id="displayWidth">5</strong>
+            <button id="reset">삭제하기</button>
+            <a id="download" download="myImage.jpg" href="" onclick="download_img(this);"><button>저장하기</button></a>
+        </div>
+    </span>
+
+    <script>
+        //canvas의 참조값 얻어오기
+        var canvas = document.querySelector("#myCanvas");
+        //canvas에 그림을 그릴 수 있는 도구의 참조값 얻어오기
+        var context = canvas.getContext("2d");
+        //현재 그림을 그리고 있는 상태인지 여부를 관리할 변수를 선언하고 초기값 부여하기
+        var isDrawing = false; //스위치 역할을 하는 것.
+
+        //색상과 선의 굵기 초기값 지정하기 - 변수를 활용하는 이유 : 변수값을 바꿀수도 있으니까
+        var thisColor="#000000";
+        var thisWidth=5;
+
+        document.querySelector("#myCanvas").addEventListener("mousedown",function(event){
+            //이벤트가 일어난 좌표에서 선을 그릴 준비를 한다.
+            //console.log(event);
+            //이벤트가 일어난 곳의 좌표 얻어오기
+            var x = event.offsetX;
+            var y = event.offsetY;
+            context.beginPath();
+            context.strokeStyle = thisColor;   //선 색
+            context.lineWidth = thisWidth;   //선의 굵기
+
+            //부드럽게 그려지게
+            context.lineCap = "round";
+            context.lineJoin = "round";
+
+            context.moveTo(x, y);
+            //그림을 그리고 있는 상태로 바꿔준다.
+            isDrawing = true;
+        });
+        document.querySelector("#myCanvas").addEventListener("mousemove",function(event){
+            //이벤트가 일어난 좌표까지 선을 그린다.  그런데 이렇게라면 상태에 상관없이 무조건 그려짐
+            //만일 현재 그리고 있는 상태가 아니면 함수를 여기서 종료한다.
+            if(!isDrawing){
+                return; //함수종료   if안으로 들어오면 아래있는 함수를 실행하지 않고 이벤트가 끝난다.
+            }
+            var x = event.offsetX;
+            var y = event.offsetY;
+            //해당 좌표까지 선을 이어준다.
+            context.lineTo(x, y);
+            context.stroke();
+        });
+        document.querySelector("#myCanvas").addEventListener("mouseup",function(){
+            //더 이상 선이 그려지지 않도록 한다.
+            isDrawing = false;
+            context.closepath();
+        });
+
+        //색상을 선택했을 때 실행할 함수 등록
+        document.querySelector("#selectedColor").addEventListener("change",function(){
+            thisColor = this.value;
+        });
+
+        //선의 굵기를 변경했을 때 실행할 함수 등록
+        document.querySelector("#selectedWidth").addEventListener("input",function(){  //input event : 현재 value 값을 테스트로 콘솔창에 출력해보기
+            console.log(this.value);
+            thisWidth = this.value;
+            document.querySelector("#displayWidth").innerText = this.value;
+        });
+
+        document.querySelector("#reset").addEventListener("click",function(){
+            // context를 이용해서 사각형 영역 clear 하기 : .clearRect(x, y, width, height)
+            context.clearRect(0, 0, canvas.width, canvas.height);
+        });
+
+
+        //저장하기 버튼 만들기
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        var ox = canvas.width / 2;
+        var oy = canvas.height / 2;
+        download_img = function(el) {
+        // get image URI from canvas object
+        var imageURI = canvas.toDataURL("image/jpg");
+        el.href = imageURI;
+        };
+
+
+
+    </script>
+
+</body>
+</html>
+
+<!--
+mousedown - 마우스 누르면
+mousemove -움직일동안
+mouseup - 마우스 떼면
+input요소의 색상이 바뀌는 것 -> change event
+-->
