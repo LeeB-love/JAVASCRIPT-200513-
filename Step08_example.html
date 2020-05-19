@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step08_example.html</title>
+</head>
+<body>
+    <h1>반복문 활용 예제 테스트 중...</h1>
+    <input type="text" id="inputName" placeholder="검색할 이름을 쓰세요!"/>
+    <button id="findBtn">검색</button>
+    <p id="console"></p>
+    <script>
+        //친구 정보를 담을 배열
+        var friends = [];
+        //배열에 sample data 담기. 학생의 정보는 여러가지 정보를 담아야하므로 object로 저장하는 것이 활용하기 편하다.
+        //[{}, {}, {}, .....,{}, {}] 이런 배열구조는 앞으로 자주 쓸 것이니 기억해두도록
+        friends.push({name:"김구라", phone:"010-3333-4444", email:"aaa@gmail.com"});
+        friends.push({name:"해골", phone:"010-5532-5326", email:"bbb@gmail.com"});
+        friends.push({name:"원숭이", phone:"010-6897-5486", email:"ccc@gmail.com"});
+        friends.push({name:"길인아", phone:"010-6356-1157", email:"ddd@gmail.com"});
+        friends.push({name:"백운용", phone:"018-7548-3589", email:"eee@gmail.com"});
+
+        // document.querySelector("#findBtn").addEventListener("click",function(){
+        //     //1. 입력한 이름 읽어오기
+        //     var inputName = document.querySelector("#inputName").value;
+        //     //2. 배열(friends)에서 동일한 이름을 가지고 있는 {}을 찾는다.
+        //     friends.forEach(function(element){if(inputName == element.name){   
+        //         document.querySelector("#console").innerText = element
+        //     }});
+        // })
+
+        document.querySelector("#findBtn").addEventListener("click",function(){
+            var inputName = document.querySelector("#inputName").value;
+            for(var i=0; i<friends.length; i++){
+                //i번째 방의 친구정보를 불러와서
+                var tmp = friends[i];
+                //만일 입력한 이름과 친구정보에 있는 이름이 같으면
+                //해당 정보를 P요소에 출력하기
+                if(inputName == tmp.name){
+                    document.querySelector("#console").innerText = 
+                        tmp.name+tmp.phone+tmp.email;
+                    break; //for문도 탈출이 가능할까?
+                }else{
+                    document.querySelector("#console").innerText = inputName + "(으)로 검색된 정보는 없습니다."
+                };
+            }
+        })
+
+    </script>
+</body>
+</html>
