@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stemp09_if3.html</title>
+</head>
+<body>
+    <h1>다중 if 문 테스트 중...</h1>
+    <button id="inputBtn">점수 입력하기</button>
+    <p id="console"></p>
+    <script>
+        document.querySelector("#inputBtn")
+        .addEventListener("click", function(){
+            // 입력받은 문자열을 숫자로 바꿔서 변수에 담는다.
+            var grade = parseFloat(prompt("점수(0~100를 입력하세요"));
+            /*
+                점수가 90 이상이면 "A"
+                80 이상이면 "B"
+                70 이상이면 "C"
+                60 이상이면 "D"
+                60 미만이면 "F"
+            */
+            if(grade>=90){
+                document.querySelector("#console").innerText = "A";
+            }else if(grade<90 && grade>=80){
+                document.querySelector("#console").innerText = "B";
+            }else if(grade<80 && grade>=70){
+                document.querySelector("#console").innerText = "C";
+            }else if(grade<70 && grade>=60){
+                document.querySelector("#console").innerText = "D";
+            }else{
+                document.querySelector("#console").innerText = "F";
+            }
+        });
+    </script>
+</body>
+</html>
+
+<!--
+    alert(); : 알림창
+    confirm(); : 확인취소창
+    prompt(); : 입력할 수 있는 창
+-->
