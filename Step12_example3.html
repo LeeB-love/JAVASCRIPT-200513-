@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step12_example3.html</title>
+    <style>
+        thead{
+            background-color: lightpink;
+        }
+        tbody tr:hover{
+            background-color: lavender;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>createElement 테스트 중...</h1>
+    <input type="text" id="inputNum" placeholder="번호입력..."/>
+    <input type="text" id="inputName" placeholder="이름입력..."/>
+    <input type="text" id="inputAddr" placeholder="주소입력..."/>
+    <button id="addBtn">추가</button>
+    <h2>추가된 회원 목록입니다.</h2>
+    <table border="1" cellspacing="0">
+        <colgroup>
+            <col width = "150">
+            <col width = "80">
+            <col width = "200">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>주소</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+
+        <script>
+            document.querySelector("#addBtn")
+            .addEventListener("click", function(){
+                //1. 입력한 정보를 읽어와서
+                let num = document.querySelector("#inputNum").value;
+                //2. td 요소를 만든 뒤 innerText에 출력하고
+                let td1 = document.createElement("td");
+                td1.innerText = num;
+
+                let name = document.querySelector("#inputName").value;
+                let td2 = document.createElement("td");
+                td2.innerText = name;
+
+                let addr = document.querySelector("#inputAddr").value;
+                let td3 = document.createElement("td")
+                td3.innerText = addr;
+
+                //3. tr 요소를 만들어서 td를 append 하고
+                let tr = document.createElement("tr")
+                tr.append(td1);
+                tr.append(td2);
+                tr.append(td3);
+
+                //4. tbody 요소에 td를 append 한다.
+                document.querySelector("tbody").append(tr);
+
+                tr.addEventListener("click", function(){
+                    this.remove()
+                });
+                });     
+                
+
+                document.querySelector("#addBtn")
+                .addEventListener("keydown", function(event){
+                
+                console.log(event);
+
+                //1. 입력한 정보를 읽어와서
+                let num = document.querySelector("#inputNum").value;
+                //2. td 요소를 만든 뒤 innerText에 출력하고
+                let td1 = document.createElement("td");
+                td1.innerText = num;
+
+                let name = document.querySelector("#inputName").value;
+                let td2 = document.createElement("td");
+                td2.innerText = name;
+
+                let addr = document.querySelector("#inputAddr").value;
+                let td3 = document.createElement("td")
+                td3.innerText = addr;
+
+                //3. tr 요소를 만들어서 td를 append 하고
+                let tr = document.createElement("tr")
+                tr.append(td1);
+                tr.append(td2);
+                tr.append(td3);
+
+                //4. tbody 요소에 td를 append 한다.
+                document.querySelector("tbody").append(tr);
+
+                tr.addEventListener("click", function(){
+                    this.remove()
+                });
+                });            
+
+
+        </script>
+    </table>
+</body>
+</html>
