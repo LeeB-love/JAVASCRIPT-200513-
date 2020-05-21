@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step13_lotto2.html</title>
+    <style>
+        #wrapper img{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>lotto 추첨기 만들기</h1>
+    <button id="rouletteBtn">추첨하기</button>
+    <div id="wrapper">
+        
+    </div>
+    <script>
+        
+        document.querySelector("#rouletteBtn").addEventListener("click",function(){
+           
+            var nums = [];
+            while(true){              //while은 몇 번 반복해야할지 모르지만, 조건을 만족할 때 까지 반복시켜야 할 경우 사용한다.
+            
+            let lottoNum = parseInt(Math.random()*45)+1;
+            if(nums.indexOf(lottoNum) == -1){
+                nums.push(lottoNum);
+            }
+            if(nums.length == 6){
+                break;
+            }
+        }
+
+         //nums 배열에 있는 숫자를 이용해서 img 요소 만들기
+         for (i=0; i<nums.length; i++){
+                let ball = document.createElement("img");
+                ball.setAttribute("src","images/lotto-ball-"+nums[i]+".png");
+                //#wrapper div에 추가하기
+                document.querySelector("#wrapper").append(ball);
+                
+            }
+            
+            let a = document.createElement("p");
+            a.innerText = "";
+            document.querySelector("#wrapper").append(a);
+        })
+        
+
+
+    
+    </script>
