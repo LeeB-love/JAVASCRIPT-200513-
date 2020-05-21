@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step12_example2.html</title>
+    <style>
+        #toDoList li:hover{
+            background-color: azure;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>createElement 테스트 중...</h1>
+    <input type="text" id="inputMsg" placeholder="할 일 입력...">
+    <button id = "addBtn">추가</button>
+    <ul id="toDoList">
+
+    </ul>
+    <script>
+        document.querySelector("#addBtn")
+        .addEventListener("click", function(){
+            //1. 입력한 할 일을 읽어온다.
+            let Msg = document.querySelector("#inputMsg").value;
+            //2. li 요소를 만들고
+            let newLi = document.createElement("li"); //버튼을 눌렀을 때 만들어지는 li의 참조값이 들어있다.
+            //3. 만든 li 요소에 innerText를 출력하고  
+            newLi.innerText = Msg;
+            document.querySelector("#toDoList").append(newLi);
+
+            newLi.addEventListener("click",function(){
+                let choice = confirm("정말 삭제하시겠습니까?");
+                if(!choice){
+                    return;
+                }
+                console.log("클릭했네?")  //그냥 변수에 점 찍어서 등록ㅠㅠ 이미 newLi에 li의 참조값이 들어있으므로. 뭐가 참조되는지 잘 생각해보자
+                this.remove(); //this를 쓰고 싶으면 오징어 쓰지말자.
+            })
+        });
+    </script>
+</body>
+</html>
