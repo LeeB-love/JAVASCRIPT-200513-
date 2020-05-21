@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step13_lotto.html</title>
+</head>
+<body>
+    <h1>lotto 추첨기 만들기</h1>
+    <p id="console"></p>
+    <script>
+        //Math.random(); : 0~1 사이의 랜덤한 실수  (Math.random*10 : 1~10 사이의 실수)
+        //parseInt(Math.random());
+        //parseInt(Math.random()*45)+1; => 0~45 사이의 랜덤한 실수
+
+        var nums = [];
+        //로또 번호 6개를 랜덤하게 얻어내서 nums 배열에 저장해보세요.
+        // for(let i=0; i<6; i++){
+        //     let lottoNum = parseInt(Math.random()*45)+1;
+        //     if(nums.indexOf(lottoNum) == -1){
+        //         nums.push(lottoNum);
+        //     }
+        // };
+
+        while(true){              //while은 몇 번 반복해야할지 모르지만, 조건을 만족할 때 까지 반복시켜야 할 경우 사용한다.
+            let lottoNum = parseInt(Math.random()*45)+1;
+            if(nums.indexOf(lottoNum) == -1){
+            nums.push(lottoNum);
+            }
+            if(nums.length == 6){
+                break;
+            }
+        }
+
+
+        //2. nums 배열에 저장된 숫자를 p요소에 순서대로 출력해보세요.
+        //배열에 저장된 값을 순서대로 참조하자
+        let line = ""
+        for(let i=0; i<nums.length; i++){
+            line = line + nums[i]+" | "
+        };
+
+        //p요소에 문자열을 출력하자
+        document.querySelector("#console").innerText = line;
+        
+    
+    </script>
+</body>
+</html>
