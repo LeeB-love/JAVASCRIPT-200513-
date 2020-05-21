@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step11_ECMA6_3.html</title>
+</head>
+<body>
+    <h1>ECMAScript6 테스트 중...</h1>
+    <button id="testBtn">테스트</button>
+    <script>
+        let a = function(num1){    //num1 인자를 밖에서 받아오면 함수 내부에서 사용하기
+            return num1*num1   // 인자로 받은 숫자를 곱해서 리턴해주기
+        }
+
+        //인자로 전달되는 숫자의 제곱값을 리턴해주는 익명함수2
+        let b = (num1)=>{
+            return num1*num1;
+        }
+
+        //인자로 전달되는 숫자의 제곱값을 리턴해주는 익명함수3 : 리턴값을 바로 쓰면 된다.
+        let c =num1 => num1*num1;
+        //arrow function : ()=>{} 함수 : function(){}
+        //자바스크립터에서 익명함수를 만들 일이 많은데, 익명함수를 arrow함수로 표현할 수 있다.
+
+        document.querySelector("#testBtn").addEventListener("click",()=>{
+            console.log("버튼을 눌렀네요?");
+            alert("버튼을 왜 누르셨을까?")
+            confirm("진짜로 누른거 맞아 아니야?")
+        })
+
+        const nums = [1,2,3,4,5,6,7,8,9,10];
+
+        let result = nums.filter((item)=>{
+            return item%2 == 0;
+        });  //filter : 걸러내기 함수
+
+        let result2 = nums.filter((item)=>item%3 == 0);
+
+        nums.forEach((item, index)=>{
+            console.log(item + "|" +index);
+        })
+    </script>
+</body>
+</html>
