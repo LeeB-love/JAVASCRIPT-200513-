@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap03_grid.html</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        .row>div{
+            border:  1px dotted green;
+        }
+    </style>
+</head>
+<body>
+    <h1>GridSystem 테스트</h1>
+    <h2>모든 영역에 대해서 (자동으로) 1:1:1의 폭을 가진다.</h2>
+    <div class="row">    <!-- 그냥 col하면 모든 창크기 - 정확히 삼등분-->
+        <div class="col">1칼럼</div>
+        <div class="col">2칼럼</div>
+        <div class="col">3칼럼</div>
+    </div>
+    <h2>모든 영역에 대해서 (명시적으로 col-4) 1:1:1의 폭을 가진다.</h2>
+    <div class="row">
+        <div class="col-4">1칼럼</div>
+        <div class="col-4">2칼럼</div>
+        <div class="col-4">3칼럼</div>
+    </div>
+    <h2>sm 영역 이상(576px)에 대해서 1:1:1의 폭을 가진다.</h2>
+    <div class="row">    <!--576px 기준으로 3등분-->
+        <div class="col-sm">1칼럼</div>
+        <div class="col-sm">2칼럼</div>
+        <div class="col-sm">3칼럼</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery02_$.html</title>
+</head>
+<body>
+    <div id="one">div1</div>
+    <div id="two">div2</div>
+    <div class="my-class">div3</div>
+    <div class="my-class">div4</div>
+    <div>div5</div>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script>
+        // 모든 div 의 참조값이 들어있는 배열
+        // var divs = document.querySelectorAll("div");
+        // 모든 div 의 innerText 를 "김구라"로 바꿔주려면?
+        // for (var i=0; i<divs.length; i++){
+        //     divs[i].innerText = "김구라"
+        // };
+
+        // jQuery로 표현하면?
+        $("div").text("김구라"); //내부적으로 반복문을 도는 표현식
+    </script>
+</body>
+</html>
+<!--
+    $ : 배열의 참조값을 리턴해줌
+        배열엔 - 문서객체의 참조값이 들어있다. 
+        $ = document.querySelectorAll("~")
+        선택자에 해당하는 문서객체를 모두 찾아서 배열에 넣어줌.
+        외형상 배열의 모습을 띄고있지만, 기능이 추가된 배열이다.
+
+    $(뭔가를 선택).action()
+    $().action().action()...
+    알아서 내부적으로 배열안에 있는 모든 문서객체에 적용을 해준다. 고로 반복문을 쓸 필요가 없다!
+-->

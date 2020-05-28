@@ -23,11 +23,18 @@
         //forEach 는 한수를 전달하는 즉시 호출된다. 호출되면서 item과 index를 전달한다. 배열인자와 배열순서가 필요하다면 사용할만함!
 
         //버튼을 눌렀을 때 names 배열 안에 있는 문자열을 순서대로 p요소의 innerText에 출력해보세요.
-        document.querySelector("#printBtn").addEventListener("click", function(){
+        // document.querySelector("#printBtn").addEventListener("click", function(){
+        //     for(var i=0; i<names.length; i++){
+        //         document.querySelectorAll("p")[i].innerText = names[i];
+        //     };
+        // })
+
+        document.querySelector("#printBtn").addEventListener("click",function(){
             names.forEach(function(item, index){
                 document.querySelectorAll("p")[index].innerText = item;
             });
-        })
+        });
+
     </script>
 </body>
 </html>

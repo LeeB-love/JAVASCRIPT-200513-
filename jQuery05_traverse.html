@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery05_traverse.html</title>
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li><a href="#" id="one">하나</a></li>
+            <li><a href="#" id="two">두울</a></li>
+            <li><a href="#" id="three">세엣</a></li>
+        </ul>
+    </div>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script>
+        // a 요소에 click 이벤트가 일어났을 때 호출되는 함수 등록
+        $("a").on("click", function(){
+            $(this).text("clicked!") //a
+            //클릭한 그 요소. $로 감싸야만 제이쿼리 동작이 가능하다. => 이거 자주 씀
+            .parent()
+            .css("background-color", "yellow") //li
+            .siblings()
+            .css("background-color", "#00ff00") //li
+            .parent()
+            .css("border", "1px solid red") //ul
+            .fadeOut();
+        });
+    </script>
+</body>
+</html>

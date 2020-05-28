@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap10_card.html</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        .row{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-md "> <!-- 미디엄 디바이스 이상에서 가운데 정렬된 container-->
+        <h1>기본 card</h1>
+        <div class="card">   <!-- card는 container의 한 줄을 다 차지한다.-->
+            <div class="card-body">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa vitae, eos architecto quas minima fugit veritatis corrupti labore perferendis cumque quia, dignissimos esse officiis, odio ratione quo eligendi fugiat ipsa.
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-sm">
+                <div class="card shadow">
+                    <div class="card-body text-success">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel illum vitae ducimus officiis, eum at temporibus magnam excepturi repellendus perspiciatis, voluptatibus et culpa quas dolore ullam aspernatur eaque impedit sint.
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card shadow">
+                    <div class="card-body text-primary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel illum vitae ducimus officiis, eum at temporibus magnam excepturi repellendus perspiciatis, voluptatibus et culpa quas dolore ullam aspernatur eaque impedit sint.
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card shadow">
+                    <div class="card-body">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel illum vitae ducimus officiis, eum at temporibus magnam excepturi repellendus perspiciatis, voluptatibus et culpa quas dolore ullam aspernatur eaque impedit sint.
+                    </div>
+                </div>
+            </div>
+        </div> <!--.row-->
+        <div class="container" style="height: 80px;" ></div>
+        <h1>card header 와 footer</h1>
+        <div class="row">
+            <div class="col-sm">
+                <div class="card">
+                    <div class="card-header">header</div>
+                    <div class="card-body">body</div>
+                    <div class="card-footer">footer</div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card-header">
+                    <h2>Android</h2>
+                </div>
+                <div class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio iste possimus ipsam corrupti, deserunt ratione ducimus quos amet, error nesciunt incidunt dolor excepturi, totam hic accusamus ipsum sit illo obcaecati?</div>
+                <div class="card-footer"><a href="#" class="btn btn-primary">구입하기</a></div>
+            </div>
+        </div> <!--.row-->
+        <div class="container" style="height: 80px;" ></div>
+        <h1>card 이미지</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card">
+                    <img class="card-img-top" src="images/강아지2.png"/>
+                    <div class="card-body">
+                        <h4>보송보송 강아지</h4>
+                        <p class="card-text">아장아장 잘도 걷네</p>
+                        <a href="#" class="btn btn-info">Profile</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8" style="display: flex;">
+                <div class="card">
+                    <div class="card-body">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque error aliquam soluta dolore explicabo. Alias culpa dignissimos totam laudantium iusto quas! Molestiae voluptate eligendi autem facere quidem alias iste sunt?
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="height: 30px;" ></div> <!-- 중간 띄우기 -->
+        <div class="row">
+            <div class="col-sm-4"">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>보송보송 강아지</h4>
+                        <p class="card-text">아장아장 잘도 걷네</p>
+                        <a href="#" class="btn btn-info stretched-link">Profile</a>  <!--stretched-link : link 확장. div class 전체가 링크화 된다. 아무데나 눌러도 링크기능 ㄱ-->
+                    </div>
+                    <img class="card-img-botton" src="images/강아지2.png"/>
+                </div>
+            </div>
+            <div class="col-sm-8" style="display: flex;">
+                <div class="card">
+                    <div class="card-body">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque error aliquam soluta dolore explicabo. Alias culpa dignissimos totam laudantium iusto quas! Molestiae voluptate eligendi autem facere quidem alias iste sunt?
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="height: 30px;" ></div> <!-- 중간 띄우기 -->
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card">
+                    <img class="card-img-top" src="images/강아지2.png"/>
+                    <div class="card-body">
+                        <h4>보송보송 강아지</h4>
+                        <p class="card-text">아장아장 잘도 걷네</p>
+                        <a href="#" class="btn btn-info">Profile</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <img class="card-img-top" src="images/강아지2.png"/>
+                    <div class="card-body">
+                        <h4>보송보송 강아지</h4>
+                        <p class="card-text">아장아장 잘도 걷네</p>
+                        <a href="#" class="btn btn-info">Profile</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <img class="card-img-top" src="images/강아지2.png"/>
+                    <div class="card-body">
+                        <h4>보송보송 강아지</h4>
+                        <p class="card-text">아장아장 잘도 걷네</p>
+                        <a href="#" class="btn btn-info">Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!--.container-->
+    <div class="container" style="height: 200px;" ></div>
+</body>
+</html>

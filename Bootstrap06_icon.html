@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap06_icon.html</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- fontawesome 에서 제공해주는 icon 을 사용하기 위해 로딩 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <style>
+        .fa-lemon{
+            color : lemonchiffon;
+            font-size: 4rem;
+        }
+        .fa-dog{
+            color: lightpink;
+            font-size: 20px;
+        }
+        .fa-trash-alt{
+            color: lightblue;
+            font-size: 4rem;
+        }
+        .fa-instagram{
+            color: mediumorchid;
+            font-size: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <i class="fas fa-dog" style="font-size: xx-large;""></i>
+        <i class="fas fa-crow"></i>
+        <span class="fas fa-crow"></span>
+        <span class="fas fa-lemon"></span>
+        <span class="fas fa-trash-alt"></span>
+        <span class="fab fa-instagram"></span>
+    </div>
+
+    <h1>버튼에 아이콘 표시하기</h1>
+    <button class="btn btn-warning fas fa-exclamation-triangle"> 삭제</button>
+    <button class="btn btn-primary far fa-paper-plane"> 전송</button>
+    <button class="btn btn-warning fas fa-exclamation-triangle"><span class="sr-only">삭제</span></button>  <!--sr-only : screen reader only-->
+</body>
+</html>
